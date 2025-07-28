@@ -1,0 +1,395 @@
+/* frontend/src/components/AI/AIAssistant.css */
+
+.ai-assistant {
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  background: #f9f9f9;
+}
+
+/* 助手头部 */
+.assistant-header {
+  padding: 16px;
+  background: white;
+  border-bottom: 1px solid #f0f0f0;
+  box-shadow: 0 1px 4px rgba(0, 0, 0, 0.08);
+}
+
+.header-content {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.header-left {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+
+.header-text h4 {
+  color: #1890ff;
+  font-weight: 600;
+}
+
+.header-right {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+/* 助手内容区 */
+.assistant-content {
+  flex: 1;
+  overflow-y: auto;
+  padding: 16px;
+}
+
+/* 空状态 */
+.empty-state {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  height: 300px;
+  text-align: center;
+}
+
+.empty-icon {
+  margin-bottom: 16px;
+}
+
+/* AI功能面板 */
+.ai-panel {
+  background: white;
+  border-radius: 8px;
+  padding: 20px;
+  margin-bottom: 16px;
+}
+
+.panel-header {
+  margin-bottom: 20px;
+}
+
+.panel-header h4 {
+  margin-bottom: 8px;
+  color: #1890ff;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.panel-controls {
+  margin-bottom: 20px;
+}
+
+.panel-results {
+  margin-top: 16px;
+}
+
+/* 标题项 */
+.title-item {
+  cursor: pointer;
+  border-radius: 6px;
+  transition: all 0.3s ease;
+  padding: 8px;
+  margin: 4px 0;
+}
+
+.title-item:hover {
+  background-color: #f5f5f5;
+  transform: translateY(-1px);
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+}
+
+.title-item.selected {
+  background-color: #e6f7ff;
+  border: 1px solid #1890ff;
+}
+
+.title-item .ant-list-item-meta-title {
+  font-size: 16px;
+  font-weight: 500;
+  line-height: 1.4;
+  margin-bottom: 8px;
+}
+
+/* 使用统计 */
+.stats-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 16px;
+  text-align: center;
+}
+
+.stat-item {
+  padding: 12px;
+  background: #f9f9f9;
+  border-radius: 6px;
+}
+
+.stat-number {
+  font-size: 24px;
+  font-weight: bold;
+  color: #1890ff;
+  line-height: 1;
+}
+
+.stat-label {
+  font-size: 12px;
+  color: #666;
+  margin-top: 4px;
+}
+
+.usage-item {
+  margin-bottom: 12px;
+}
+
+.usage-item:last-child {
+  margin-bottom: 0;
+}
+
+/* AI Tabs 自定义样式 */
+.ai-tabs .ant-tabs-nav {
+  background: white;
+  border-radius: 6px;
+  padding: 4px;
+  margin-bottom: 16px;
+}
+
+.ai-tabs .ant-tabs-tab {
+  padding: 8px 12px;
+  margin: 0 2px;
+  border-radius: 4px;
+  transition: all 0.3s ease;
+}
+
+.ai-tabs .ant-tabs-tab:hover {
+  background-color: #f0f0f0;
+}
+
+.ai-tabs .ant-tabs-tab-active {
+  background-color: #1890ff !important;
+  color: white !important;
+}
+
+.ai-tabs .ant-tabs-tab-active .anticon {
+  color: white !important;
+}
+
+.ai-tabs .ant-tabs-ink-bar {
+  display: none;
+}
+
+.ai-tabs .ant-tabs-content-holder {
+  padding: 0;
+}
+
+.ai-tabs .ant-tabs-tabpane {
+  background: transparent;
+}
+
+/* 快捷操作按钮 */
+.quick-actions {
+  padding: 16px;
+  background: white;
+  border-top: 1px solid #f0f0f0;
+  text-align: center;
+}
+
+/* 响应式设计 */
+@media (max-width: 768px) {
+  .stats-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+  
+  .assistant-header {
+    padding: 12px;
+  }
+  
+  .assistant-content {
+    padding: 12px;
+  }
+  
+  .ai-panel {
+    padding: 16px;
+  }
+}
+
+@media (max-width: 480px) {
+  .stats-grid {
+    grid-template-columns: 1fr;
+  }
+  
+  .header-content {
+    flex-direction: column;
+    gap: 12px;
+    text-align: center;
+  }
+  
+  .quick-actions .ant-space {
+    justify-content: center;
+  }
+}
+
+/* 动画效果 */
+@keyframes slideInUp {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.panel-results {
+  animation: slideInUp 0.3s ease-out;
+}
+
+/* 加载状态 */
+.ai-assistant .ant-spin-container {
+  transition: opacity 0.3s ease;
+}
+
+.ai-assistant .ant-spin-blur {
+  opacity: 0.5;
+  pointer-events: none;
+}
+
+/* 卡片悬停效果 */
+.ai-panel .ant-card-small {
+  transition: all 0.3s ease;
+  border: 1px solid #f0f0f0;
+}
+
+.ai-panel .ant-card-small:hover {
+  border-color: #1890ff;
+  box-shadow: 0 2px 8px rgba(24, 144, 255, 0.1);
+}
+
+/* 进度条自定义 */
+.ai-assistant .ant-progress-circle .ant-progress-text {
+  font-weight: bold;
+}
+
+.ai-assistant .ant-progress-line {
+  margin: 4px 0;
+}
+
+/* 标签样式 */
+.ai-assistant .ant-tag {
+  border-radius: 12px;
+  font-size: 12px;
+  padding: 2px 8px;
+}
+
+/* 按钮组样式 */
+.ai-assistant .ant-radio-group {
+  width: 100%;
+}
+
+.ai-assistant .ant-radio-button-wrapper {
+  flex: 1;
+  text-align: center;
+}
+
+/* 输入框样式 */
+.ai-assistant .ant-input,
+.ai-assistant .ant-input-affix-wrapper {
+  border-radius: 6px;
+}
+
+.ai-assistant .ant-input:focus,
+.ai-assistant .ant-input-focused {
+  border-color: #1890ff;
+  box-shadow: 0 0 0 2px rgba(24, 144, 255, 0.2);
+}
+
+/* 列表项样式 */
+.ai-assistant .ant-list-item {
+  border-radius: 6px;
+  margin-bottom: 8px;
+  transition: all 0.3s ease;
+}
+
+.ai-assistant .ant-list-item:hover {
+  background-color: #fafafa;
+}
+
+/* 分割线样式 */
+.ai-assistant .ant-divider {
+  margin: 16px 0;
+  color: #1890ff;
+  font-weight: 500;
+}
+
+.ai-assistant .ant-divider::before,
+.ai-assistant .ant-divider::after {
+  border-top-color: #e6f7ff;
+}
+
+/* 徽章样式 */
+.ai-assistant .ant-badge {
+  line-height: 1;
+}
+
+.ai-assistant .ant-badge-count {
+  box-shadow: 0 0 0 1px #fff;
+}
+
+/* 工具提示样式 */
+.ai-assistant .ant-tooltip-inner {
+  border-radius: 6px;
+  font-size: 12px;
+}
+
+/* 滚动条样式 */
+.assistant-content::-webkit-scrollbar {
+  width: 6px;
+}
+
+.assistant-content::-webkit-scrollbar-track {
+  background: #f1f1f1;
+  border-radius: 3px;
+}
+
+.assistant-content::-webkit-scrollbar-thumb {
+  background: #c1c1c1;
+  border-radius: 3px;
+}
+
+.assistant-content::-webkit-scrollbar-thumb:hover {
+  background: #a8a8a8;
+}
+
+/* 暗色主题支持 */
+@media (prefers-color-scheme: dark) {
+  .ai-assistant {
+    background: #141414;
+  }
+  
+  .assistant-header {
+    background: #1f1f1f;
+    border-bottom-color: #303030;
+  }
+  
+  .ai-panel {
+    background: #1f1f1f;
+    border: 1px solid #303030;
+  }
+  
+  .stat-item {
+    background: #262626;
+  }
+  
+  .title-item:hover {
+    background-color: #262626;
+  }
+  
+  .title-item.selected {
+    background-color: #111b26;
+    border-color: #1890ff;
+  }
+}
