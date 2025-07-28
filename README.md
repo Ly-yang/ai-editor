@@ -20,7 +20,7 @@ WeChat AI Editor 是一款集成AI智能排版、多样式模板、实时预览�
 
 1. **克隆项目**
 ```bash
-git clone https://github.com/your-username/wechat-ai-editor.git
+git clone https://github.com/Ly-yang/ai-editor.git
 cd wechat-ai-editor
 ```
 
